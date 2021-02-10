@@ -78,7 +78,7 @@ log(diet);
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
-const dinnerTray = diet.slice(); // basically it copies by value by creating a new array
+const dinnerTray = diet.slice(); // basically it copies by value and it creates a new array
 log("Ex. 6");
 log(dinnerTray);
 

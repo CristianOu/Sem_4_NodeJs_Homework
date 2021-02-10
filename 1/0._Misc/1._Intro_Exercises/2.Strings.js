@@ -59,7 +59,6 @@ const fact = "You are learning javascript!";
 log("Ex. 7");
 
 let position = fact.search("j");
-log(position);
 
 let newFact = fact.substring(0, position) + "J" + fact.substring(position + 1, fact.length);
 log(newFact);
