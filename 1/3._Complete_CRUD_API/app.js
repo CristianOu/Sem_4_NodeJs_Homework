@@ -34,7 +34,7 @@ app.post('/users', (req, res) => {
         lastExistingId = usersList[usersList.length - 1].id;
     }
 
-    // Creating a new object for each new user and store it the array.
+    // It creates a new object for each new user and it stores it in the array.
     // Also, the last existing id is incremented after each inserted user.
     let size = newUsers.length;
     for (let i = 0; i < size; i++) {
@@ -67,13 +67,14 @@ app.post('/users/:id', (req, res) => {
 });
 
 
-// PUT(Update) ALL users - rare cases
+// PUT(Update) ALL users - rare case
 app.put('/users', (req, res) => {
     let updatedUsers = req.body;
 
     // Finding both lengths of the existing array and of the one specified by the client
     let sizeOfExisting = usersList.length;
     let sizeOfNew = Object.keys(updatedUsers).length;
+    // The users are changed consecutively as long as any of the array has not reached the limit
     for (let i = 0; i < sizeOfExisting && i < sizeOfNew; i++) {
         usersList[i].name = updatedUsers[i].name;
         usersList[i].age = updatedUsers[i].age;
@@ -96,6 +97,7 @@ app.put('/users/:id', (req, res) => {
             name: req.body.name,
             age: req.body.age
         };
+        // It skips the old object and it adds the new user in its place 
         usersList.splice(index, 1, updatedUser);
     }
     
