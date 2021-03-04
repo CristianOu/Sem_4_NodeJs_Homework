@@ -1,3 +1,6 @@
+// This implementation is just for practicing. Not all endpoints should be implemented
+// in real world.
+
 const express = require('express');
 const app = express(); 
 
