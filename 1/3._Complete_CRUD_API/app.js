@@ -21,7 +21,7 @@ app.get('/users', (req, res) => {
 
 // GET one user - important
 app.get('/users/:id', (req, res) => {
-    res.send(usersList.find(user => user.id == req.params.id));
+    res.send(usersList.find(user => user.id === parseInt(req.params.id));
 });
 
 
@@ -90,7 +90,7 @@ app.put('/users', (req, res) => {
 // PUT(Update) one user - important
 app.put('/users/:id', (req, res) => {
     // Storing the index of the user that has to be updated
-    let index = usersList.findIndex(user => user.id == req.params.id);
+    let index = usersList.findIndex(user => user.id === parseInt(req.params.id));
 
     // Only if the user exists
     if (index > -1) {
@@ -118,10 +118,12 @@ app.delete('/users', (req, res) => {
 // DELETE one user - important
 app.delete('/users/:id', (req, res) => {
     // Searching for the index of the user that has to be deleted from the array
-    let index = usersList.findIndex(user => user.id == req.params.id);
+    let index = usersList.findIndex(user => user.id === parseInt(req.params.id));
 
     // The element is skipped, therefore deleted from the array
-    usersList.splice(index, 1);
+    if (index > -1) {
+        usersList.splice(index, 1);
+    }
     res.send(usersList);
 })
 
