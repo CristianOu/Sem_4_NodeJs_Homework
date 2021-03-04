@@ -21,7 +21,7 @@ app.get('/users', (req, res) => {
 
 // GET one user - important
 app.get('/users/:id', (req, res) => {
-    res.send(usersList.find(user => user.id === parseInt(req.params.id));
+    res.send(usersList.find(user => user.id === parseInt(req.params.id)));
 });
 
 
